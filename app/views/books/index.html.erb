@@ -1,0 +1,48 @@
+<div class="container mb-5">
+
+  <h1 class="my-5">Book  to  Action</h1>
+  <button type="button" class="btn btn-outline-dark mb-3"><%= link_to "本とアクションを追加する", new_book_path, class: 'post ' %></button><br>
+  <button type="button" class="btn btn-outline-dark mb-5"><%= link_to "トップページに戻る", root_path, class: 'post ' %></button><br>
+
+  <div class="row mb-5">
+
+    <% @books.each do |book| %>
+      <% if current_user.id == book.user_id %>
+        <h1 class="border-line">-■--●--■--●--■--●--■--●--■--●--■--●--■--●--■--●-</h1>
+
+        <!--サムネ-->
+        <div class="my-books col-12 col-lg-5">
+          <img src="http://images-jp.amazon.com/images/P/<%= book.isbn_code %>.09.LZZZZZZZ" class="book_image">
+        </div>
+        <!--情報とアクションプラン-->
+        <div class="to_do_list col-12 col-lg-7 pl-5">
+          
+          <h1 class="book_title">
+            <a>『<%= book.name %>』</a>
+          </h1>
+          <div class="buy">
+            <a>➡︎ </a>
+            <a href="<%= book.amazon_url %>" class="btn-stitch" target=”_blank”>Amazon商品ページへ</a>
+          </div>
+
+          <h3>Action Plans</h3>
+          <span class="plan-list">Plan. 1  </span>
+          <p class="plan">
+            <i class="fa fa-star"></i><%= book.first_plan %>
+          </p>
+          <span class="plan-list">Plan. 2  </span>
+          <p class="plan">
+            <i class="fa fa-star"></i><%= book.second_plan %>
+          </p>
+          <span class="plan-list">Plan. 3  </span>
+          <p class="plan">
+            <i class="fa fa-star"></i><%= book.third_plan %>
+          </p>           
+        </div>
+
+      <% end %>
+    <% end %>
+
+  </div>
+
+</div>

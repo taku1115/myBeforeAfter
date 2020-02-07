@@ -1,0 +1,236 @@
+<head>
+     <style>
+       .jumbotron-wrapper {
+         padding-top:88px;
+       }
+       .jumbotron ,.icons ,.footer {     
+         background-color:#FFE4E1;
+       }
+       .fa-stack-2x{
+         color: black;
+       }
+       .fa-stack-1x{
+         color:white;
+       }
+       .nav {
+         position:fixed;
+         z-index:10;
+         width:100vw;
+         opacity:0.8;
+       }
+       .nav-link {
+         color:white;
+       }
+       
+       .content-box {
+         height:200px;
+         width:200px;
+         background-color:#FFE4E1;
+       }
+     </style>
+</head>
+
+<body>
+
+  <!--header-->
+      <ul class="nav justify-content-end bg-dark py-4">
+        <li class="nav-item">
+          <a class="nav-link active" href="#to_about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#to_services">Services</a>
+        </li>
+        <li class="nav-item pr-5">
+          <a class="nav-link" href="#to_contact">Contact</a>
+        </li>
+        <% if user_signed_in? %>
+          <li>
+            <button type="button" class="btn btn-outline-secondary mr-2"><%= link_to "はじめる", "#to_services", class: 'post' %></button>
+          </li>
+          <li>
+            <button type="button" class="btn btn-outline-secondary mr-5 "><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></button>
+          </li>
+          </ul>
+        <% else %>
+          <li>
+            <button type="button" class="btn btn-outline-secondary mr-2"><%= link_to "ログイン", new_user_session_path, class: 'post' %></button>
+          </li>
+          <li>
+            <button type="button" class="btn btn-outline-secondary mr-5"><%= link_to "新規登録", new_user_registration_path, class: 'post' %></button>
+          </li>
+        <% end %>
+      </ul>
+  
+
+  <!--top-wrapper-->
+    <div class="jumbotron-wrapper" style="height: 688px;">
+      <div class="jumbotron h-100 text-center">
+        <h1 class="display-2 pt-5">My  Before <span class="fa fa-arrow-right fa-sm"></span> After</h1>
+        <p class="lead pt-3">日々学習に努めるあなたへ  全く新しい to do List が誕生しました</p>
+        <hr class="my-4 border-dark">
+        <p>インプットの形が変わりつつある今、My Before After は時代にピッタリのアウトプットツールを提供します。</p>
+        <a class="btn btn-dark btn-lg mt-5 about_btn" href="#to_about" role="button">About this Application</a>
+      </div>
+    </div>
+
+  <!--about-wrapper-->
+    <div class="container mt-5 bg-light py-3 p-5">
+      <h1 id="to_about">About</h1>
+      <p class="mt-3">テクノロジーの進化は、人々の暮らしを変える。</p>
+      <p>学習コンテンツも、デジタルデバイスを通じて多種多様なものとなった。</p>
+      <p>電子書籍や動画コンテンツの充実によって、良質な情報はすぐ目の前に溢れている。</p>
+      <p>これからの時代 充実したコンテンツに触れ、自分次第で どこまででもインプットの質を高めることができるだろう。</p>
+      <p>しかし、日本人は世界的に見ても勉強不足であると言われている。</p>
+      <p>子どもは本を読まない。大人になったら勉強をしない。</p>
+      <p>変化が激しい現代社会で、知識と行動のアップデートは間違いなく人生そのものを豊かなものにしてくれるはずだ。</p>
+      <p>学習を怠るのはもったいない。そして時代とともに自分自身もアップデートしよう。</p>
+      <p>My Before Afterは、インプットの質を高め、アウトプットを楽しくさせる新しいツールだ。</p>
+      <p>明確な着地目標と、具体的なネクストアクション、そして自己投資によるビフォーアフターの可視化を提供する</p>
+      <p>新時代の to do List である。</p>
+      <a class="btn btn-dark btn-lg mt-3" href="#to_services" role="button">はじめる</a>
+    </div>
+
+  <!--servise-wrapper-->
+    <div class="container mt-5">
+      <div class="services">
+        <h1 class="mb-3" id="to_services">Services</h1>
+        <div class="contents row">
+              <div class="content col-12 col-lg-6">
+                  <h3 class="pt-3 mb-0">1. YouTube to Action</h3><br>
+                  <div class="d-flex">
+                      <div class="content-box text-center rounded-lg border border-dark">
+                          <span class="fab fa-youtube fa-5x p-3"></span><br>
+                          <span class="fa fa-reply-all fa-flip-horizontal fa-flip-vertical fa-4x"></span>
+                          <span class="fa fa-user-plus fa-4x"></span>
+                      </div>
+                      <div class="content-text pl-3">
+                          <p>YouTubeを学習教材として活用する方へ。<br>
+                          学習効率を最大化させるべく、<br>アクションプランを設定しましょう。<br>
+                          勉強になった動画を記録し、<br>明確なアウトプット方法を決定。<br>
+                          YouTubeを見ただけで終わらせず、<br>自分自身のアップデートを実感しましょう。</p>
+                          <% if user_signed_in? %>
+                            <a href="/contents" class="start-btn">スタート</a>
+                          <% else %>
+                            <a href="/users/sign_in" class="start-btn">スタート</a>
+                          <% end %>
+                      </div>
+                  </div>
+
+              </div>
+              <div class="content col-12 col-lg-6">
+                  <h3 class="pt-3 mb-0">2. Hourly Productivity</h3><br>
+                  <div class="d-flex">
+                      <div class="content-box text-center rounded-lg  border border-dark">
+                          <span class="fa fa-clock fa-5x pt-3 pr-3"></span>
+                          <span class="fa fa-clock fa-4x pt-4"></span><br>
+                          <span class="fa fa-clock fa-4x pt-2 pr-3"></span>
+                          <span class="fa fa-clock fa-5x pt-2"></span>
+                      </div>
+                      <div class="content-text pl-3">
+                          <p>Comming soon...</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="content col-12 col-lg-6">
+                  <h3 class="pt-3 mb-0">3. Books to Action</h3><br>
+                  <div class="d-flex">
+                      <div class="content-box text-center rounded-lg  border border-dark">
+                          <span class="fa fa-book fa-5x p-3"></span><br>
+                          <span class="fa fa-reply-all fa-flip-horizontal fa-flip-vertical fa-4x"></span>
+                          <span class="fa fa-user-plus fa-4x"></span>
+                      </div>
+                      <div class="content-text pl-3">
+                          <p>アウトプットまでが読書。<br>
+                          書き込みながら読み進めたり、<br>自分なりにノートにまとめてみたり、<br>
+                          いろいろな読書のカタチがありますが、<br>学びを具体的な行動に落とし込むことで、<br>
+                          コストパフォーマンスを最大化します。<br>変わるための読書を始めましょう。</p>
+                          <% if user_signed_in? %>
+                            <a href="/books" class="start-btn">スタート</a>
+                          <% else %>
+                            <a href="/users/sign_in" class="start-btn">スタート</a>
+                          <% end %>
+                      </div>
+                  </div>
+              </div>
+              <div class="content col-12 col-lg-6">
+                  <h3 class="pt-3 mb-0">4. Cost Performance</h3><br>
+                  <div class="d-flex">
+                      <div class="content-box rounded-lg  border border-dark">
+                          <span class="fa-stack fa-5x pt-3">
+                              <span class="fa fa-certificate fa-stack-2x"></span>
+                              <span class="fa fa-chart-line fa-stack-1x"></span>
+                          </span>
+                      </div>
+                      <div class="content-text pl-3">
+                          <p>Comming soon...</p>
+                      </div>
+                  </div>
+              </div>
+        </div>
+      </div>  
+    </div>
+
+  <!--contact-wrapper-->
+    <div class="container mt-5">
+      <div class="contact mt-5 bg-light py-3 p-5">
+        <h1 id="to_contact">Contact</h1>
+        <div class="form">
+          <form>
+            <label for="exampleFormControlInput1">お名前</label><br>
+            <div class="form-row">
+              <div class="col-4">
+                <input type="text" class="form-control" placeholder="First name">
+              </div>
+              <div class="col-4">
+                <input type="text" class="form-control" placeholder="Last name">
+              </div>
+            </div>
+            <div class="form-group pt-2">
+              <label for="exampleFormControlInput1">メールアドレス</label>
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <div class="form-group pt-2">
+              <label for="exampleFormControlTextarea1">お問い合わせ内容</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+            </div>
+            <button type="submit" class="btn btn-dark btn-lg disabled" aria-disabled="true">送信</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  <!-- Map -->
+    <div class="container map">
+      <section id="contact" class="map mt-3" style="height: 300px;">
+        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.6359941940273!2d135.49900906497342!3d34.663894680444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e77b5c66fb11%3A0xc9e3af357945c49!2zVEVDSDo6RVhQRVJUIOOBquOCk-OBsOOCueOCq-OCpOOCquagoQ!5e0!3m2!1sja!2sjp!4v1579994862942!5m2!1sja!2sjp" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+      </section>
+    </div>
+
+  <!-- icons -->
+    <div class="icons text-center pt-3 mt-3">
+      <span class="fa-stack fa-2x">
+        <a href="https://twitter.com/">
+          <span class="fa fa-circle fa-stack-2x"></span>
+          <span class="fab fa-twitter fa-stack-1x"></span> 
+        </a>
+      </span>
+      <span class="fa-stack fa-2x">
+        <a href="https://www.facebook.com/">
+          <span class="fa fa-circle fa-stack-2x"></span>
+          <span class="fab fa-facebook fa-stack-1x"></span> 
+        </a>
+      </span>
+      <span class="fa-stack fa-2x">
+        <a href="https://www.instagram.com/">
+          <span class="fa fa-circle fa-stack-2x"></span>
+          <span class="fab fa-instagram fa-stack-1x"></span> 
+        </a>
+      </span>
+    </div>
+
+  <!-- footer -->
+    <div class="footer text-center pt-4 pb-3">
+      <small>©︎ My Before After 2020</small>
+    </div>
+
+</body>
