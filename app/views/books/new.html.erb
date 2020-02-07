@@ -1,0 +1,20 @@
+  <div class="container new_book pt-5">
+    
+    <%= form_for @book do |form| %>
+      <h3>Title</h3>
+      <%= form.text_field :name, placeholder: "  タイトルを設定してください（本のタイトルでも構いません）" , class: "mb-3" %>
+      <h4>本</h4>
+      <%= form.text_field :amazon_url, placeholder: "  Amazonの商品ページのURLを貼り付けてください" , class: "book_code mb-2" %><br>
+      <%= form.text_field :isbn_code, placeholder: "  Amazonページ下部の登録情報に記載されている ISBNコード(ASINコード) を記入して下さい" , class: "book_code mb-3" %><br>
+      <h4>Action Plan を設定</h4>
+      <span>Plan 1</span>
+      <%= form.text_field :first_plan, placeholder: "   具体的なアクションプランを設定してください" , class: "mb-3 ml-1" %><br>
+      <span>Plan 2</span>
+      <%= form.text_field :second_plan, placeholder: "   具体的なアクションプランを設定してください" , class: "mb-3 ml-1" %><br>
+      <span>Plan 3</span>
+      <%= form.text_field :third_plan, placeholder: "   具体的なアクションプランを設定してください" , class: "mb-3 ml-1" %><br>
+      <%= form.submit "追加する" %><br>
+      <button type="button" class="btn btn-outline-dark mt-3"><%= link_to "戻る", books_path, class: 'post ' %></button><br>
+    <% end %>
+    
+  </div>

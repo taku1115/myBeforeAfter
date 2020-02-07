@@ -1,0 +1,68 @@
+.jumbotron-wrapper {
+  padding-top:88px;
+}
+.jumbotron ,.icons ,.footer {     
+  background-color:#FFE4E1;
+}
+.fa-stack-2x{
+  color: black;
+}
+.fa-stack-1x{
+  color:white;
+}
+.nav {
+  position:fixed;
+  z-index:10;
+  width:100vw;
+  opacity:0.8;
+}
+.nav-link {
+  color:white;
+}
+
+.content-box {
+  height:200px;
+  width:200px;
+  background-color:#FFE4E1;
+}
+
+.books h1 {
+  margin-top: 60px;
+}
+
+.new_book input[type="text"] {
+  width: 700px;
+  height: 40px;
+}
+
+.to_do_list input[type="text"]{
+  width: 400px;
+  margin-bottom: 30px;
+}
+
+.to_do_list input[type="submit"]{
+  height: 38px;
+  width: 38px;
+}
+
+.to_do_list {
+  margin-top: 100px;
+}
+
+.to_do_list h3 {
+  padding-bottom: 10px;
+}
+
+.to_do_list h4 {
+  padding: 3px 12px;
+  border: 2px solid red;
+  margin: 10px 0 5px 10px;
+  width: 100px;
+}
+
+.plan {
+  font-size: 18px;
+  padding-left: 40px;
+  padding-top: 8px;
+}
+
