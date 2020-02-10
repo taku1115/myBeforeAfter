@@ -1,4 +1,18 @@
 
+.book-header {
+  position: fixed;
+  z-index: 10;
+  background-color: #FFE4E1;
+  width: 100%;
+  border: 1px solid black;
+}
+
+
+
+.book-wrapper {
+  padding-top: 70px;
+}
+
 .new_book input[type="text"] {
   width: 700px;
   height: 40px;

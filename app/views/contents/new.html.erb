@@ -1,5 +1,5 @@
+<div class="new-contents">
   <div class="container new_content pt-5">
-
     <%= form_for @content do |form| %>
       <h3>Title</h3>
       <%= form.text_field :name, placeholder: "  タイトルを設定してください（動画タイトルでも構いません）" , class: "mb-3" %>
@@ -15,6 +15,6 @@
       <%= form.submit "追加する" %><br>
       <button type="button" class="btn btn-outline-dark mt-3"><%= link_to "戻る", contents_path, class: 'post ' %></button><br>
     <% end %>
-    
   </div>
-  
+</div>
+ 
