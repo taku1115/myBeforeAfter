@@ -27,6 +27,15 @@
          width:200px;
          background-color:#FFE4E1;
        }
+
+       .content-title {
+         border-bottom:1px solid black;
+       }
+
+       .not-yet {
+         font-size:16px;
+       }
+
      </style>
 </head>
 
@@ -96,7 +105,7 @@
         <h1 class="mb-3" id="to_services">Services</h1>
         <div class="contents row">
               <div class="content col-12 col-lg-6">
-                  <h3 class="pt-3 mb-0">1. YouTube to Action</h3><br>
+                  <h3 class="p-3 mb-0 content-title">YouTube to Action</h3><br>
                   <div class="d-flex">
                       <div class="content-box text-center rounded-lg border border-dark">
                           <span class="fab fa-youtube fa-5x p-3"></span><br>
@@ -109,30 +118,16 @@
                           勉強になった動画を記録し、<br>明確なアウトプット方法を決定。<br>
                           YouTubeを見ただけで終わらせず、<br>自分自身のアップデートを実感しましょう。</p>
                           <% if user_signed_in? %>
-                            <a href="/contents" class="start-btn">スタート</a>
+                            <a href="/contents" class="start-btn">START</a>
                           <% else %>
-                            <a href="/users/sign_in" class="start-btn">スタート</a>
+                            <a href="/users/sign_in" class="start-btn">START</a>
                           <% end %>
                       </div>
                   </div>
-
               </div>
+              
               <div class="content col-12 col-lg-6">
-                  <h3 class="pt-3 mb-0">2. Hourly Productivity</h3><br>
-                  <div class="d-flex">
-                      <div class="content-box text-center rounded-lg  border border-dark">
-                          <span class="fa fa-clock fa-5x pt-3 pr-3"></span>
-                          <span class="fa fa-clock fa-4x pt-4"></span><br>
-                          <span class="fa fa-clock fa-4x pt-2 pr-3"></span>
-                          <span class="fa fa-clock fa-5x pt-2"></span>
-                      </div>
-                      <div class="content-text pl-3">
-                          <p>Comming soon...</p>
-                      </div>
-                  </div>
-              </div>
-              <div class="content col-12 col-lg-6">
-                  <h3 class="pt-3 mb-0">3. Books to Action</h3><br>
+                  <h3 class="p-3 mb-0 content-title">Books to Action</h3><br>
                   <div class="d-flex">
                       <div class="content-box text-center rounded-lg  border border-dark">
                           <span class="fa fa-book fa-5x p-3"></span><br>
@@ -145,27 +140,14 @@
                           いろいろな読書のカタチがありますが、<br>学びを具体的な行動に落とし込むことで、<br>
                           コストパフォーマンスを最大化します。<br>変わるための読書を始めましょう。</p>
                           <% if user_signed_in? %>
-                            <a href="/books" class="start-btn">スタート</a>
+                            <a href="/books" class="start-btn">START</a>
                           <% else %>
-                            <a href="/users/sign_in" class="start-btn">スタート</a>
+                            <a href="/users/sign_in" class="start-btn">START</a>
                           <% end %>
                       </div>
                   </div>
               </div>
-              <div class="content col-12 col-lg-6">
-                  <h3 class="pt-3 mb-0">4. Cost Performance</h3><br>
-                  <div class="d-flex">
-                      <div class="content-box rounded-lg  border border-dark">
-                          <span class="fa-stack fa-5x pt-3">
-                              <span class="fa fa-certificate fa-stack-2x"></span>
-                              <span class="fa fa-chart-line fa-stack-1x"></span>
-                          </span>
-                      </div>
-                      <div class="content-text pl-3">
-                          <p>Comming soon...</p>
-                      </div>
-                  </div>
-              </div>
+              
         </div>
       </div>  
     </div>
@@ -173,7 +155,7 @@
   <!--contact-wrapper-->
     <div class="container mt-5">
       <div class="contact mt-5 bg-light py-3 p-5">
-        <h1 id="to_contact">Contact</h1>
+        <h1 id="to_contact">Contact<span class="not-yet pl-3">※Action Mailer実装予定</span></h1>
         <div class="form">
           <form>
             <label for="exampleFormControlInput1">お名前</label><br>
@@ -198,14 +180,6 @@
         </div>
       </div>
     </div>
-
-  <!-- Map -->
-    <div class="container map">
-      <section id="contact" class="map mt-3" style="height: 300px;">
-        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.6359941940273!2d135.49900906497342!3d34.663894680444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e77b5c66fb11%3A0xc9e3af357945c49!2zVEVDSDo6RVhQRVJUIOOBquOCk-OBsOOCueOCq-OCpOOCquagoQ!5e0!3m2!1sja!2sjp!4v1579994862942!5m2!1sja!2sjp" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-      </section>
-    </div>
-
   <!-- icons -->
     <div class="icons text-center pt-3 mt-3">
       <span class="fa-stack fa-2x">
