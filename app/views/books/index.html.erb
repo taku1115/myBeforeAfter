@@ -22,7 +22,7 @@
             <a>（例 <%= book.id %>）『<%= book.name %>』</a>
           </h1>
           <i class="fa fa-trash pb-3 ml-4"></i>
-          <%= link_to 'リストから削除する', "books", data: { confirm: '使用例は削除できません。' } %>
+          <%= link_to 'リストから削除する', "books", data: { confirm: '使用例のため削除できません。' } %>
           <div class="buy">
             <a>➡︎ </a>
             <a href="<%= book.amazon_url %>" class="btn-stitch" target=”_blank”>Amazon商品ページへ</a>
