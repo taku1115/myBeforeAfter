@@ -9,32 +9,59 @@
 
     <div class="row">
       <% @contents.each do |content| %>
+        <% if content.user_id == 0 %>
+            <div class="my-contents col-12 col-lg-6">
+              <h1 class="title">
+                （例 <%= content.id %>）<%= content.name %>
+              </h1>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= content.url.last(11) %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+              <i class="fa fa-trash"></i>
+              <%= link_to 'リストから削除する', content, method: :delete, data: { confirm: '削除してもよろしいですか?' } %>
+          </div>
+
+          <div class="to_do_list col-12 col-lg-6 pl-5">
+            <h3 class="plans_title">Action Plans（例）</h3>
+            <span class="plan-list">Plan. 1</span>
+            <p class="plan">
+              <i class="fa fa-star"></i><%= content.first_plan %>
+            </p>
+            <span class="plan-list">Plan. 2</span>
+            <p class="plan">
+              <i class="fa fa-star"></i><%= content.second_plan %>
+            </p>
+            <span class="plan-list">Plan. 3</span>
+            <p class="plan">
+              <i class="fa fa-star"></i><%= content.third_plan %>
+            </p>           
+          </div>
+
+        <% end %>
         <% if current_user.id == content.user_id %>
 
-        <div class="my-contents col-12 col-lg-6">
-            <h1 class="title">
-              <%= content.name %>
-            </h1>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= content.url.last(11) %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
-            <i class="fa fa-trash"></i>
-            <%= link_to 'リストから削除する', content, method: :delete, data: { confirm: '削除してもよろしいですか?' } %>
-        </div>
+          <div class="my-contents col-12 col-lg-6">
+              <h1 class="title">
+                <%= content.name %>
+              </h1>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= content.url.last(11) %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+              <i class="fa fa-trash"></i>
+              <%= link_to 'リストから削除する', content, method: :delete, data: { confirm: '削除してもよろしいですか?' } %>
+          </div>
 
-        <div class="to_do_list col-12 col-lg-6 pl-5">
-          <h3 class="plans_title">Action Plans</h3>
-          <span class="plan-list">Plan. 1</span>
-          <p class="plan">
-            <i class="fa fa-star"></i><%= content.first_plan %>
-          </p>
-          <span class="plan-list">Plan. 2</span>
-          <p class="plan">
-            <i class="fa fa-star"></i><%= content.second_plan %>
-          </p>
-          <span class="plan-list">Plan. 3</span>
-          <p class="plan">
-            <i class="fa fa-star"></i><%= content.third_plan %>
-          </p>           
-        </div>
+          <div class="to_do_list col-12 col-lg-6 pl-5">
+            <h3 class="plans_title">Action Plans</h3>
+            <span class="plan-list">Plan. 1</span>
+            <p class="plan">
+              <i class="fa fa-star"></i><%= content.first_plan %>
+            </p>
+            <span class="plan-list">Plan. 2</span>
+            <p class="plan">
+              <i class="fa fa-star"></i><%= content.second_plan %>
+            </p>
+            <span class="plan-list">Plan. 3</span>
+            <p class="plan">
+              <i class="fa fa-star"></i><%= content.third_plan %>
+            </p>           
+          </div>
 
         <% end %>
       <% end %>

@@ -7,12 +7,43 @@
 
 <div class="container book-wrapper mb-5">
 
-  <div class="row mb-5">
-
+  <div class="row mb-5">    
     <% @books.each do |book| %>
+      <% if book.user_id == 0 %><!--例-->
+        <h1 class="border-line">-■--●--■--●--■--●--■--●--■--●--■--●--■--●--■--●-</h1>
+        <!--サムネ-->
+        <div class="my-books col-12 col-lg-5">
+          <img src="http://images-jp.amazon.com/images/P/<%= book.isbn_code %>.09.LZZZZZZZ" class="book_image">
+        </div>
+        <!--情報とアクションプラン-->
+        <div class="to_do_list col-12 col-lg-7 pl-5">
+          
+          <h1 class="book_title">
+            <a>（例 <%= book.id %>）『<%= book.name %>』</a>
+          </h1>
+          <i class="fa fa-trash pb-3 ml-4"></i>
+          <%= link_to 'リストから削除する', book, method: :delete, data: { confirm: '削除してもよろしいですか?' } %>
+          <div class="buy">
+            <a>➡︎ </a>
+            <a href="<%= book.amazon_url %>" class="btn-stitch" target=”_blank”>Amazon商品ページへ</a>
+          </div>
+          <h3>Action Plans（例）</h3>
+          <span class="plan-list">Plan. 1  </span>
+          <p class="plan">
+            <i class="fa fa-star"></i><%= book.first_plan %>
+          </p>
+          <span class="plan-list">Plan. 2  </span>
+          <p class="plan">
+            <i class="fa fa-star"></i><%= book.second_plan %>
+          </p>
+          <span class="plan-list">Plan. 3  </span>
+          <p class="plan">
+            <i class="fa fa-star"></i><%= book.third_plan %>
+          </p>           
+        </div>
+      <% end %>
       <% if current_user.id == book.user_id %>
         <h1 class="border-line">-■--●--■--●--■--●--■--●--■--●--■--●--■--●--■--●-</h1>
-
         <!--サムネ-->
         <div class="my-books col-12 col-lg-5">
           <img src="http://images-jp.amazon.com/images/P/<%= book.isbn_code %>.09.LZZZZZZZ" class="book_image">
