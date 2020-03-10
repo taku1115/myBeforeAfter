@@ -12,11 +12,11 @@
         <% if content.user_id == 0 %>
             <div class="my-contents col-12 col-lg-6">
               <h1 class="title">
-                （例 <%= content.id %>）<%= content.name %>
+                （例 <%= content.id %>）<br><%= content.name %>
               </h1>
               <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= content.url.last(11) %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
               <i class="fa fa-trash"></i>
-              <%= link_to 'リストから削除する', content, method: :delete, data: { confirm: '削除してもよろしいですか?' } %>
+              <%= link_to 'リストから削除する',"contents", data: { confirm: '使用例は削除できません。' } %>
           </div>
 
           <div class="to_do_list col-12 col-lg-6 pl-5">
